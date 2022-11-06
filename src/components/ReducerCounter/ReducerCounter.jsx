@@ -39,7 +39,7 @@ const ReducerCounter = () => {
   }
 
   return (
-    <Fragment className="App">
+    <Fragment className="container">
       <Fragment className="main-card">
         <button
           className="main-btn-d"

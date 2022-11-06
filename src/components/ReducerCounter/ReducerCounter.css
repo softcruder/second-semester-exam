@@ -1,0 +1,15 @@
+.container{
+  margin: 0  auto;
+  width: 500px;
+  height: 50vh;
+  background-color: #D8D9CF;
+  /*border: 1px solid rgba(218,165,32,0.75);*/
+  margin-top:150px ;
+  border-radius: 15px;
+  padding-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+.counter-display h1{
+  text-align: center;
+}
