@@ -2,8 +2,8 @@ import React, { useState, useReducer, div } from 'react';
 import './ReducerCounter.css';
 
 const ReducerCounter = () => {
-  const [count, setCount] = useState(0);
-  const [state, dispatch] = useReducer(reducer, { count: 0, value: 0 });
+  const [value, setValue] = useState(0);
+  const [state, dispatch] = useReducer(reducer, 0);
 
   function reducer(state, action) {
     switch (action.type) {
@@ -19,17 +19,12 @@ const ReducerCounter = () => {
         break;
       case 'reset':
         {
-          return state.count === 0;
+          return (state = 0);
         }
         break;
-      case 'setValue':
+      case 'set':
         {
-          return { ...state, count: action.payload };
-        }
-        break;
-      case 'count':
-        {
-          return { ...state, value: action.payload };
+          return (state = action.payload);
         }
         break;
       default: {
@@ -38,49 +33,53 @@ const ReducerCounter = () => {
     }
   }
 
+  const handleIncrement = (e) => {
+    e.preventDefault();
+    dispatch({ type: 'increment' });
+  };
+
+  const handleDecreament = (e) => {
+    e.preventDefault();
+    dispatch({ type: 'decrement' });
+  };
+
+  const handleReset = (e) => {
+    e.preventDefault();
+    dispatch({ type: 'reset' });
+  };
+
+  const handleSet = () => {
+    dispatch({ type: 'set', payload: +value });
+    setValue(0);
+  };
+
   return (
     <>
       <div className="container">
         <div className="main-card">
           <button
             className="main-btn-d"
-            onClick={() => {
-              dispatch({ type: 'decrement' });
-            }}
+            onClick={handleDecreament}
+            disabled={state === 0}
           >
             -
           </button>
-          <div className="counter">{state.count}</div>
-          <button
-            className="main-btn-i"
-            onClick={() => {
-              dispatch({ type: 'increment' });
-            }}
-          >
+          <div className="counter">{state}</div>
+          <button className="main-btn-i" onClick={handleIncrement}>
             +
           </button>
-          <div className="extra">
-            <button
-              className="btn"
-              onClick={() => {
-                dispatch({ type: 'reset', payload: state.value });
-              }}
-            >
+          <div className="extra-card">
+            <button className="btn" onClick={handleReset}>
               Reset
             </button>
             <input
               type="number"
               value={state.value}
               onChange={(e) => {
-                dispatch({ type: 'count', payload: e.target.value });
+                setValue(e.target.value);
               }}
             />
-            <button
-              className="btn"
-              onClick={() => {
-                dispatch({ type: 'setValue', payload: value.state });
-              }}
-            >
+            <button className="btn" onClick={handleSet}>
               Set Counter
             </button>
           </div>

@@ -9,49 +9,55 @@
   flex-wrap: wrap;
   align-content: center;
   justify-content: center;
+  margin-top: 120px;
 }
 
 .main-card {
-  position: relative;
-  display: grid;
-  grid-template-columns: 2fr 1fr;
+  display: flex;
   border-radius: 5px;
-  padding: 20px;
+  padding: 10px;
 }
 
 .main-btn-d {
-  position: absolute;
   background-color: black;
   color: rgb(200, 150, 17);
   font-size: 18px;
   font-weight: 600;
   border: 1px;
-  border-radius: 20px 0 0 20px;
+  border-radius: 25px 0 0 25px;
 }
 
 .counter {
-  position: relative;
+  background-color: #fff;
+  border: 2px solid black;
+  font-size: 18px;
+  padding: 10px;
 }
 
 .main-btn-i {
-  position: inherit;
   background-color: black;
   color: rgb(200, 150, 17);
   font-size: 18px;
   font-weight: 600;
   border: 1px;
-  border-radius: 0 20px 20px 0;
+  border-radius: 0 25px 25px 0;
 }
 
 .extra-card {
-  position: a;
-  display: inline-flex;
-  border-radius: 5px;
+  display: block;
+  align-items: center;
   padding: 20px;
+  margin: auto;
 }
 
 input {
   height: 1.8rem;
   border: 2px solid rgb(200, 150, 17);
   border-radius: 8px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
