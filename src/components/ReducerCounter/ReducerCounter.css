@@ -10,6 +10,7 @@
   align-content: center;
   justify-content: center;
   margin-top: 120px;
+  margin-bottom: 120px;
 }
 
 .main-card {
@@ -29,8 +30,11 @@
 
 .counter {
   background-color: #fff;
+  color: rgb(200, 150, 17);
   border: 2px solid black;
   font-size: 18px;
+  font-weight: 600;
+  font-family: 'Poppins';
   padding: 10px;
 }
 
@@ -51,13 +55,30 @@
 }
 
 input {
-  height: 1.8rem;
-  border: 2px solid rgb(200, 150, 17);
-  border-radius: 8px;
+  height: 35px;
+  border: 2px solid black;
 }
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+.extra-btn-re {
+  background-color: black;
+  color: rgb(200, 150, 17);
+  font-size: 18px;
+  font-weight: 600;
+  border: 1px;
+  border-radius: 15px 0 0 15px;
+}
+
+.extra-btn-se {
+  background-color: black;
+  color: rgb(200, 150, 17);
+  font-size: 18px;
+  font-weight: 600;
+  border: 1px;
+  border-radius: 0 15px 15px 0;
 }
