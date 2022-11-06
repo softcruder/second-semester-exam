@@ -14,7 +14,7 @@ function useCounter(initialCount = 0, value) {
     setCount(initialCount);
   };
   const set = () => {
-    setCount();
+    setCount(input.value);
   };
   return [count, increment, decrement, reset, set];
 }

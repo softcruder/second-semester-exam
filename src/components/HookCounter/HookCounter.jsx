@@ -16,7 +16,7 @@ const HookCounter = () => {
           setValue(e.target.value);
         }}
       />
-      <button onClick={setValue} Set Count></button>
+      <button onClick={set} Set Count></button>
     </div>
   );
 };
