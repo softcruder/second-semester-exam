@@ -1,24 +1,23 @@
-import { Fragment } from 'react';
+import React from 'react';
 import useCounter from './useCounter';
 
 const HookCounter = () => {
   const [count, increment, decrement, reset, set] = useCounter(0, 1);
 
   return (
-    <Fragment className="Counter">
-      <button onClick={increment} disabled={count === 0}>
-        +
-      </button>
-      <Fragment> {count} </Fragment>
-      <button onClick={decrement} disabled={count === 0}>
-        -
-      </button>
-      <button onClick={reset} disabled={count === 0}>
-        Reset
-      </button>
-      <input type="number" placeholder="Value" />
+    <div className="Counter">
+      <button onClick={increment}>+</button>
+      <div> {count} </div>
+      <button onClick={decrement}>-</button>
+      <button onClick={reset}>Reset</button>
+      <input
+        type="number"
+        onChange={(e) => {
+          setValue(e.target.value);
+        }}
+      />
       <button onClick={set} Set Count></button>
-    </Fragment>
+    </div>
   );
 };
 
