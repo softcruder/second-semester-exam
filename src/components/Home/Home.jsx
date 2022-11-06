@@ -1,19 +1,21 @@
 import React from 'react';
-//import Navbar from '../components/Navbar/Navbar';
+import './Home.css';
 
 const Home = () => {
   return (
     <>
-      <h1>
-        AltSchool Africa Second Semester Exam Project by {''}
-        <a
-          style={{ textDecoration: '' }}
-          href="https://softcruder.github.io"
-          rel="noopener"
-        >
-          Softcruder
-        </a>
-      </h1>
+      <div className="home">
+        <h1>
+          AltSchool Africa Second Semester Exam Project by {''}
+          <a
+            className="home-link"
+            href="https://softcruder.github.io"
+            rel="noopener"
+          >
+            Softcruder
+          </a>
+        </h1>
+      </div>
     </>
   );
 };

@@ -1,0 +1,15 @@
+.home {
+  width: auto;
+  margin: auto;
+  padding: 20px 10px;
+}
+
+h1 {
+  font-weight: 500;
+}
+
+.home-link {
+  font-weight: 400;
+  text-decoration: none;
+  color: rgb(221, 150, 17);
+}
