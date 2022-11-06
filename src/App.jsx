@@ -7,6 +7,7 @@ import HookCounter from './components/HookCounter/HookCounter';
 import ReducerCounter from './components/ReducerCounter/ReducerCounter';
 import NotFound from './components/NotFound/NotFound';
 import Home from './components/Home/Home';
+import Error from './Error';
 import './style.css';
 
 function App() {
@@ -23,9 +24,10 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/custom" element={<HookCounter />} />
-          <Route path="/reducer" element={<ReducerCounter />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="custom" element={<HookCounter />} />
+          <Route path="reducer" element={<ReducerCounter />} />
+          <Route path="error" element={<NotFound />} />
+          <Route path="*" element={<Error />} />
         </Routes>
       </ErrorBoundary>
     </>

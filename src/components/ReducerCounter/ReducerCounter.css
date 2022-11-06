@@ -1,15 +1,17 @@
-.container{
-  margin: 0  auto;
-  width: 500px;
-  height: 50vh;
-  background-color: #D8D9CF;
-  /*border: 1px solid rgba(218,165,32,0.75);*/
-  margin-top:150px ;
-  border-radius: 15px;
-  padding-top: 30px;
+.container {
+  margin: auto;
+  width: 40%;
+  padding: 15px;
   display: flex;
   justify-content: center;
 }
-.counter-display h1{
-  text-align: center;
+.main-card {
+  background-color: rgba(221, 221, 221, 0.555);
+  padding: 10px 20px;
+}
+
+.main-btn-d {
+  background-color: black;
+  color: rgb(221, 150, 17);
+  border-radius: 15px 0 15x 0;
 }

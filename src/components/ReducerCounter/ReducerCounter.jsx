@@ -1,4 +1,4 @@
-import React, { useState, useReducer, Fragment } from 'react';
+import React, { useState, useReducer, div } from 'react';
 import './ReducerCounter.css';
 
 const ReducerCounter = () => {
@@ -39,56 +39,58 @@ const ReducerCounter = () => {
   }
 
   return (
-    <Fragment className="container">
-      <Fragment className="main-card">
-        <button
-          className="main-btn-d"
-          onClick={() => {
-            dispatch({ type: 'decrement' });
-          }}
-          disabled={count === 0}
-        >
-          -
-        </button>
-        <Fragment className="counter">{state.count}</Fragment>
-        <button
-          className="main-btn-i"
-          onClick={() => {
-            dispatch({ type: 'increment' });
-          }}
-          disabled={count === 0}
-        >
-          +
-        </button>
-        <Fragment className="extra">
+    <>
+      <div className="container">
+        <div className="main-card">
           <button
-            className="btn"
+            className="main-btn-d"
             onClick={() => {
-              dispatch({ type: 'reset', payload: state.value });
+              dispatch({ type: 'decrement' });
             }}
             disabled={count === 0}
           >
-            Reset
+            -
           </button>
-          <input
-            type="number"
-            value={state.value}
-            onChange={(e) => {
-              // console.log(e.target.value);
-              dispatch({ type: 'count', payload: e.target.value });
-            }}
-          />
+          <div className="counter">{state.count}</div>
           <button
-            className="btn"
+            className="main-btn-i"
             onClick={() => {
-              dispatch({ type: 'setValue', payload: +value });
+              dispatch({ type: 'increment' });
             }}
+            disabled={count === 0}
           >
-            Set Counter
+            +
           </button>
-        </Fragment>
-      </Fragment>
-    </Fragment>
+          <div className="extra">
+            <button
+              className="btn"
+              onClick={() => {
+                dispatch({ type: 'reset', payload: state.value });
+              }}
+              disabled={count === 0}
+            >
+              Reset
+            </button>
+            <input
+              type="number"
+              value={state.value}
+              onChange={(e) => {
+                // console.log(e.target.value);
+                dispatch({ type: 'count', payload: e.target.value });
+              }}
+            />
+            <button
+              className="btn"
+              onClick={() => {
+                dispatch({ type: 'setValue', payload: +value });
+              }}
+            >
+              Set Counter
+            </button>
+          </div>
+        </div>
+      </div>
+    </>
   );
 };
 

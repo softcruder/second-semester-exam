@@ -5,16 +5,18 @@ const Home = () => {
   return (
     <>
       <div className="home">
-        <h1>
-          AltSchool Africa Second Semester Exam Project by {''}
-          <a
-            className="home-link"
-            href="https://softcruder.github.io"
-            rel="noopener"
-          >
-            Softcruder
-          </a>
-        </h1>
+        <div className="content-container">
+          <h1>
+            AltSchool Africa Second Semester Exam Project by {''}
+            <a
+              className="home-link"
+              href="https://softcruder.github.io"
+              rel="noopener"
+            >
+              Softcruder
+            </a>
+          </h1>
+        </div>
       </div>
     </>
   );

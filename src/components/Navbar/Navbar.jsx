@@ -11,28 +11,13 @@ const Navbar = () => {
       <div className="nav-link">
         <ul>
           <li>
-            <NavLink
-              to="/reducer"
-              className={(isActive) => (isActive ? 'active' : 'inactive')}
-            >
-              Reducer
-            </NavLink>
+            <NavLink to="reducer">Reducer</NavLink>
           </li>
           <li>
-            <NavLink
-              to="/custom"
-              className={(isActive) => (isActive ? 'active' : 'inactive')}
-            >
-              Custom
-            </NavLink>
+            <NavLink to="custom">Custom</NavLink>
           </li>
           <li>
-            <NavLink
-              to="notfound"
-              className={(isActive) => (isActive ? 'active' : 'inactive')}
-            >
-              404page
-            </NavLink>
+            <NavLink to="error">404page</NavLink>
           </li>
         </ul>
       </div>
