@@ -16,7 +16,7 @@ const HookCounter = () => {
       <button onClick={reset} disabled={count === 0}>
         Reset
       </button>
-      <input type="number" placeholder="Value" value={value} />
+      <input type="number" placeholder="Value" />
       <button onClick={set} Set Count></button>
     </Fragment>
   );

@@ -1,15 +1,20 @@
 import React from 'react';
+//import Navbar from '../components/Navbar/Navbar';
 
 const Home = () => {
   return (
-    <Fragment className="container">
+    <>
       <h1>
         AltSchool Africa Second Semester Exam Project by {''}
-        <a href="https://softcruder.github.me" rel="noopener">
+        <a
+          style={{ textDecoration: '' }}
+          href="https://softcruder.github.io"
+          rel="noopener"
+        >
           Softcruder
         </a>
       </h1>
-    </Fragment>
+    </>
   );
 };
 export default Home;
