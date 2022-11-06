@@ -22,7 +22,7 @@
 .main-btn-d {
   position: absolute;
   background-color: black;
-  color: rgb(187, 160, 109);
+  color: rgb(200, 150, 17);
   font-size: 18px;
   font-weight: 600;
   border: 1px;
@@ -36,7 +36,7 @@
 .main-btn-i {
   position: inherit;
   background-color: black;
-  color: rgb(187, 160, 109);
+  color: rgb(200, 150, 17);
   font-size: 18px;
   font-weight: 600;
   border: 1px;
@@ -48,4 +48,10 @@
   display: inline-flex;
   border-radius: 5px;
   padding: 20px;
+}
+
+input {
+  height: 1.8rem;
+  border: 2px solid rgb(200, 150, 17);
+  border-radius: 8px;
 }
