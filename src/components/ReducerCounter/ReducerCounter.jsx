@@ -24,13 +24,11 @@ const ReducerCounter = () => {
         break;
       case 'setValue':
         {
-          console.log(state, action);
           return { ...state, count: action.payload };
         }
         break;
       case 'count':
         {
-          console.log(state, action);
           return { ...state, value: action.payload };
         }
         break;
@@ -47,8 +45,8 @@ const ReducerCounter = () => {
           className="main-btn-d"
           onClick={() => {
             dispatch({ type: 'decrement' });
-            // console.log("here")
           }}
+          disabled={count === 0}
         >
           -
         </button>
@@ -57,8 +55,8 @@ const ReducerCounter = () => {
           className="main-btn-i"
           onClick={() => {
             dispatch({ type: 'increment' });
-            // console.log("here")
           }}
+          disabled={count === 0}
         >
           +
         </button>
@@ -68,6 +66,7 @@ const ReducerCounter = () => {
             onClick={() => {
               dispatch({ type: 'reset', payload: state.value });
             }}
+            disabled={count === 0}
           >
             Reset
           </button>
