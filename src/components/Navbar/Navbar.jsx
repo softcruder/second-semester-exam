@@ -17,7 +17,7 @@ const Navbar = () => {
             <NavLink to="custom">Custom</NavLink>
           </li>
           <li>
-            <NavLink to="error">404page</NavLink>
+            <NavLink to="error">404 Page</NavLink>
           </li>
         </ul>
       </div>
