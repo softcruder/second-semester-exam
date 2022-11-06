@@ -1,17 +1,38 @@
 .container {
   margin: auto;
   width: 40%;
-  padding: 15px;
+  background-color: rgba(221, 221, 221, 0.555);
+  border: 3px solid rgba(230, 230, 230, 0.95);
+  border-radius: 5px;
+  padding: 10px 20px;
   display: flex;
   justify-content: center;
 }
 .main-card {
-  background-color: rgba(221, 221, 221, 0.555);
+  border-radius: 5px;
   padding: 10px 20px;
 }
 
 .main-btn-d {
+  position: relative;
   background-color: black;
-  color: rgb(221, 150, 17);
-  border-radius: 15px 0 15x 0;
+  color: rgb(187, 160, 109);
+  font-size: 18px;
+  font-weight: 900;
+  border: 1px;
+  border-radius: 20px 0 0 20px;
+}
+
+.counter {
+  position: absolute;
+}
+
+.main-btn-i {
+  position: relative;
+  background-color: black;
+  color: rgb(187, 160, 109);
+  font-size: 18px;
+  font-weight: 900;
+  border: 1px;
+  border-radius: 0 20px 20px 0;
 }
