@@ -69,7 +69,7 @@ const ReducerCounter = () => {
             +
           </button>
           <div className="extra-card">
-            <button className="btn" onClick={handleReset}>
+            <button className="extra-btn-re" onClick={handleReset}>
               Reset
             </button>
             <input
@@ -79,7 +79,7 @@ const ReducerCounter = () => {
                 setValue(e.target.value);
               }}
             />
-            <button className="btn" onClick={handleSet}>
+            <button className="extra-btn-se" onClick={handleSet}>
               Set Counter
             </button>
           </div>
