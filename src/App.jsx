@@ -7,7 +7,7 @@ import HookCounter from './components/HookCounter/HookCounter';
 import ReducerCounter from './components/ReducerCounter/ReducerCounter';
 import NotFound from './components/NotFound/NotFound';
 import Home from './components/Home/Home';
-import ErrorBoundary from './Error';
+import Error from './Error';
 import './style.css';
 
 function App() {

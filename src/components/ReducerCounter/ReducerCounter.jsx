@@ -47,7 +47,6 @@ const ReducerCounter = () => {
             onClick={() => {
               dispatch({ type: 'decrement' });
             }}
-            disabled={count === 0}
           >
             -
           </button>
@@ -57,7 +56,6 @@ const ReducerCounter = () => {
             onClick={() => {
               dispatch({ type: 'increment' });
             }}
-            disabled={count === 0}
           >
             +
           </button>
@@ -67,7 +65,6 @@ const ReducerCounter = () => {
               onClick={() => {
                 dispatch({ type: 'reset', payload: state.value });
               }}
-              disabled={count === 0}
             >
               Reset
             </button>
@@ -75,14 +72,13 @@ const ReducerCounter = () => {
               type="number"
               value={state.value}
               onChange={(e) => {
-                // console.log(e.target.value);
                 dispatch({ type: 'count', payload: e.target.value });
               }}
             />
             <button
               className="btn"
               onClick={() => {
-                dispatch({ type: 'setValue', payload: +value });
+                dispatch({ type: 'setValue', payload: value.state });
               }}
             >
               Set Counter
