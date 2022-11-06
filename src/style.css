@@ -7,20 +7,13 @@ p {
 }
 
 button {
-  border-radius: 8px;
+  border-radius: 10px;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
+  padding: 8px 15px;
   font-size: 1em;
+  font-weight: 400;
   color: #fff;
-  font-family: inherit;
-  /*background-color: rgba(218,165,32,0.75);*/
-  background-color: #251b37;
+  font-family: 'Poppins';
+  background-color: rgb(221, 150, 17);
   cursor: pointer;
-  font-weight: bold;
-  margin-right: 5px;
-  margin-bottom: 20px;
-}
-.btn {
-  padding-top: 50px;
-  margin: 0 auto;
 }

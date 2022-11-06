@@ -6,7 +6,7 @@ const ErrorFallback = ({ error, resetErrorBoundary }) => {
       <h2>
         Oops! Something went wrong. <br /> See more details below{' '}
       </h2>
-      <p style="red">{error.message}</p>
+      <pre style={{ color: red }}>{error.message}</pre>
       <button onClick={resetErrorBoundary}>Go Home</button>
     </div>
   );

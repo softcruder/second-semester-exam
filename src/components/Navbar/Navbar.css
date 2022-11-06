@@ -35,7 +35,7 @@ nav ul li a:hover {
   font-weight: 600;
 }
 
-a.isActive {
+nav ul li a:active {
   border: 1px solid rgb(221, 150, 17);
   padding: 5px 10px;
 }

@@ -1,38 +1,51 @@
 .container {
   margin: auto;
-  width: 40%;
+  width: 50%;
   background-color: rgba(221, 221, 221, 0.555);
   border: 3px solid rgba(230, 230, 230, 0.95);
   border-radius: 5px;
   padding: 10px 20px;
   display: flex;
+  flex-wrap: wrap;
+  align-content: center;
   justify-content: center;
 }
+
 .main-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
   border-radius: 5px;
-  padding: 10px 20px;
+  padding: 20px;
 }
 
 .main-btn-d {
-  position: relative;
+  position: absolute;
   background-color: black;
   color: rgb(187, 160, 109);
   font-size: 18px;
-  font-weight: 900;
+  font-weight: 600;
   border: 1px;
   border-radius: 20px 0 0 20px;
 }
 
 .counter {
-  position: absolute;
+  position: relative;
 }
 
 .main-btn-i {
-  position: relative;
+  position: inherit;
   background-color: black;
   color: rgb(187, 160, 109);
   font-size: 18px;
-  font-weight: 900;
+  font-weight: 600;
   border: 1px;
   border-radius: 0 20px 20px 0;
+}
+
+.extra-card {
+  position: a;
+  display: inline-flex;
+  border-radius: 5px;
+  padding: 20px;
 }
