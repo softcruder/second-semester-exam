@@ -1,5 +1,17 @@
-import React, { ErrorInfo } from 'react';
-import ErrorFallback from './components/NotFound/ErrorFallback';
+import React from 'react';
+
+function ErrorThrowingComponent() {
+  throw new Error('This is a test error');
+  return null;
+}
+
+function ErrorBoundaryComponent() {
+  return (
+    <ErrorBoundary>
+      <ErrorThrowingComponent />
+    </ErrorBoundary>
+  );
+}
 
 class ErrorBoundary extends React.Component {
   constructor(props) {
@@ -36,4 +48,4 @@ class ErrorBoundary extends React.Component {
   }
 }
 
-export default ErrorBoundary;
+export default ErrorBoundaryComponent;

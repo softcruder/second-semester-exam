@@ -1,48 +1,49 @@
-import React, { useReducer } from 'react';
-import useCounter from '../HookCounter/useCounter';
+import { useReducer } from 'react';
+import CounterComponent from '../HookCounter/CounterComponent'
 
-function ReducerCounter() {
-  const { count, increment, decrement, setValue, reset } = useCounter();
-
-  return (
-    <div className="flex flex-col items-center space-y-4">
-      <div className="text-3xl font-bold">{count}</div>
-      <div className="flex space-x-4">
-        <button
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-          onClick={increment}
-        >
-          Increment
-        </button>
-        <button
-          className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
-          onClick={decrement}
-        >
-          Decrement
-        </button>
-      </div>
-      <div className="flex space-x-4">
-        <input
-          className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-48 py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
-          type="number"
-          value={count}
-          onChange={(event) => setValue(event.target.value)}
-        />
-        <button
-          className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
-          onClick={(event) => setValue(event.target.value)}
-        >
-          Set
-        </button>
-        <button
-          className="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded"
-          onClick={reset}
-        >
-          Reset
-        </button>
-      </div>
-    </div>
-  );
+function ReducerCounter(state, action) {
+  switch (action.type) {
+    case 'increment':
+      return { count: state.count + 1 };
+    case 'decrement':
+      return { count: state.count - 1 };
+    case 'reset':
+      return { count: 0 };
+    case 'setValue':
+      return { count: action.value };
+    default:
+      throw new Error();
+  }
 }
 
+function CounterComponent() {
+  const [state, dispatch] = useReducer(counterReducer, { count: 0 });
+
+  function increment() {
+    dispatch({ type: 'increment' });
+  }
+
+  function decrement() {
+    dispatch({ type: 'decrement' });
+  }
+
+  function reset() {
+    dispatch({ type: 'reset' });
+  }
+  
+  function setValue(value) {
+    dispatch({ type: 'setValue', value });
+  }
+  
+  return (
+    <div className="flex justify-between items-center">
+      <button className="px-4 py-2 rounded-lg bg-blue-500 text-white" onClick={increment}>+</button>
+      <button className="px-4 py-2 rounded-lg bg-blue-500 text-white" onClick={decrement}>-</button>
+      <button className="px-4 py-2 rounded-lg bg-gray-400" onClick={reset}>Reset</button>
+      <input className="px-4 py-2 rounded-lg bg-gray-200" type="text" onChange={e => setValue(e.target.value)} />
+      <p className="px-4 py-2 rounded-lg bg-gray-200">Count: {state.count}</p>
+    </div>
+  );
+  }
+  
 export default ReducerCounter;
