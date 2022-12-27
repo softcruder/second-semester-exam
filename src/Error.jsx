@@ -1,24 +1,17 @@
-import * as React from 'react';
+import React, { ErrorInfo } from 'react';
 import ErrorFallback from './components/NotFound/ErrorFallback';
 
 class ErrorBoundary extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { hasError: false };
-  }
-
-  static getDerivedStateFromError(error) {
-    // Update state so the next render will show the fallback UI.
-    return { hasError: true };
-  }
-
-  componentDidCatch(error, errorInfo) {
-    logErrorToMyService(error, errorInfo);
-  }
+  state = { hasError: false };
 
   render() {
     if (this.state.hasError) {
-      return <ErrorFallback />;
+      return (
+        <div className="flex flex-col items-center space-y-4">
+          <div className="text-3xl font-bold text-red-500">Error</div>
+          <div className="text-xl">An error has occurred.</div>
+        </div>
+      );
     }
 
     return this.props.children;

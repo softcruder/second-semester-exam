@@ -1,28 +1,38 @@
 import React from 'react';
-import { NavLink, Link } from 'react-router-dom';
-import './Navbar.css';
+import { Link } from 'react-router-dom';
 
-const Navbar = () => {
+function Navbar() {
   return (
-    <nav>
-      <Link to="/">
-        <h2 className="logo">Softcruder</h2>
-      </Link>
-      <div className="nav-link">
-        <ul>
-          <li>
-            <NavLink to="reducer">Reducer</NavLink>
-          </li>
-          <li>
-            <NavLink to="custom">Custom</NavLink>
-          </li>
-          <li>
-            <NavLink to="error">404</NavLink>
-          </li>
-        </ul>
+    <nav className="bg-gray-800 p-2">
+      <div className="container mx-auto flex items-center justify-between flex-wrap p-2">
+        <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+          <div className="text-sm lg:flex-grow">
+            <Link to="/">
+              <h2 className="logo">Softcruder</h2>
+            </Link>
+            <Link
+              to="/reducer"
+              className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
+            >
+              useReducer
+            </Link>
+            <Link
+              to="/custom"
+              className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
+            >
+              Custom Hook
+            </Link>
+            <Link
+              to="/error"
+              className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
+            >
+              Not Found
+            </Link>
+          </div>
+        </div>
       </div>
     </nav>
   );
-};
+}
 
 export default Navbar;

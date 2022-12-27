@@ -11,15 +11,15 @@ function useCounter() {
     setCount(count - 1);
   }
 
-  function setValue(value) {
-    setCount(value);
-  }
-
   function reset() {
     setCount(0);
   }
 
-  return { count, increment, decrement, setValue, reset };
+  function setValue(value) {
+    setCount(value);
+  }
+
+  return { count, increment, decrement, reset, setValue };
 }
 
 export default useCounter;

@@ -30,9 +30,9 @@ function ReducerCounter() {
         />
         <button
           className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
-          onClick={() => setValue(0)}
+          onClick={(event) => setValue(event.target.value)}
         >
-          Set to 0
+          Set
         </button>
         <button
           className="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded"
