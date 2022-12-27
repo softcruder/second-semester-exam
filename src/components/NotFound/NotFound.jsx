@@ -6,9 +6,11 @@ const NotFound = () => {
   const navigate = useNavigate();
   return (
     <div className="error-page">
-      <div className="error-container">
-        <h3>404 Page</h3>
-        <p>Page not found</p>
+      <div className="flex flex-col items-center space-y-4">
+        <div className="text-3xl font-bold text-red-500">Error 404</div>
+        <div className="text-xl">
+          The page you are looking for could not be found.
+        </div>
         <button
           className="error-btn"
           onClick={() => {

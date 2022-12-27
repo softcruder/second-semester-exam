@@ -1,92 +1,48 @@
-import React, { useState, useReducer, div } from 'react';
-import './ReducerCounter.css';
+import React, { useReducer } from 'react';
+import useCounter from '../HookCounter/useCounter';
 
-const ReducerCounter = () => {
-  const [value, setValue] = useState(0);
-  const [state, dispatch] = useReducer(reducer, 0);
-
-  function reducer(state, action) {
-    switch (action.type) {
-      case 'increment':
-        {
-          return state + 1;
-        }
-        break;
-      case 'decrement':
-        {
-          return state - 1;
-        }
-        break;
-      case 'reset':
-        {
-          return (state = 0);
-        }
-        break;
-      case 'set':
-        {
-          return (state = action.payload);
-        }
-        break;
-      default: {
-        return state;
-      }
-    }
-  }
-
-  const handleIncrement = (e) => {
-    e.preventDefault();
-    dispatch({ type: 'increment' });
-  };
-
-  const handleDecreament = (e) => {
-    e.preventDefault();
-    dispatch({ type: 'decrement' });
-  };
-
-  const handleReset = (e) => {
-    e.preventDefault();
-    dispatch({ type: 'reset' });
-  };
-
-  const handleSet = () => {
-    dispatch({ type: 'set', payload: +value });
-    setValue(0);
-  };
+function ReducerCounter() {
+  const { count, increment, decrement, setValue, reset } = useCounter();
 
   return (
-    <>
-      <div className="container">
-        <div className="main-card">
-          <button
-            className="main-btn-d"
-            onClick={handleDecreament}
-            disabled={state === 0}
-          >
-            -
-          </button>
-          <div className="counter">{state}</div>
-          <button className="main-btn-i" onClick={handleIncrement}>
-            +
-          </button>
-          <div className="extra-card">
-            <button className="extra-btn-re" onClick={handleReset}>
-              Reset
-            </button>
-            <input
-              type="number"
-              value={state.value}
-              onChange={(e) => {
-                setValue(e.target.value);
-              }}
-            />
-            <button className="extra-btn-se" onClick={handleSet}>
-              Set Counter
-            </button>
-          </div>
-        </div>
+    <div className="flex flex-col items-center space-y-4">
+      <div className="text-3xl font-bold">{count}</div>
+      <div className="flex space-x-4">
+        <button
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          onClick={increment}
+        >
+          Increment
+        </button>
+        <button
+          className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+          onClick={decrement}
+        >
+          Decrement
+        </button>
       </div>
-    </>
+      <div className="flex space-x-4">
+        <input
+          className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-48 py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+          type="number"
+          value={count}
+          onChange={(event) => setValue(event.target.value)}
+        />
+        <button
+          className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+          onClick={() => setValue(0)}
+        >
+          Set to 0
+        </button>
+        <button
+          className="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded"
+          onClick={reset}
+        >
+          Reset
+        </button>
+      </div>
+    </div>
   );
-};
+}
 
 export default ReducerCounter;
