@@ -7,14 +7,25 @@ import HookCounter from './components/HookCounter/HookCounter';
 import ReducerCounter from './components/ReducerCounter/ReducerCounter';
 import NotFound from './components/NotFound/NotFound';
 import Home from './components/Home/Home';
-import Error from './Error';
 import './style.css';
 
+/**
+ * The root component for the application, which sets up the router
+ * and error handling.
+ */
+
 function App() {
+  // Get the `useNavigate` hook from `react-router-dom` for use in
+  // the error boundary reset handler
   const navigate = useNavigate();
 
   return (
     <>
+    {/*
+        Use the `ErrorBoundary` component from `react-error-boundary` to
+        catch any errors that occur within the `Routes` component.
+        If an error occurs, the `ErrorFallback` component will be displayed.
+      */}
       <ErrorBoundary
         FallbackComponent={ErrorFallback}
         onReset={() => {
@@ -23,11 +34,16 @@ function App() {
       >
         <Navbar />
         <Routes>
+          {/* Define the routes for the application */}
           <Route path="/" element={<Home />} />
           <Route path="custom" element={<HookCounter />} />
           <Route path="reducer" element={<ReducerCounter />} />
-          <Route path="error" element={<NotFound />} />
-          <Route path="*" element={<Error />} />
+          {/*
+            Use the `NotFound` component as the fallback for all
+            routes that don't match any of the other routes.
+          */}
+          <Route path="not-found" element={<NotFound />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </ErrorBoundary>
     </>

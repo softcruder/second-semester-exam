@@ -1,0 +1,36 @@
+.counter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.counter h2 {
+  margin: 0;
+}
+
+.counter p {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.counter button {
+  width: 100px;
+  height: 30px;
+  font-size: 16px;
+  margin: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #00b8d4;
+  color: #fff;
+  cursor: pointer;
+}
+
+.counter input[type='text'] {
+  width: 100px;
+  height: 30px;
+  font-size: 16px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
