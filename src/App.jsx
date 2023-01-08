@@ -19,9 +19,15 @@ function App() {
   // the error boundary reset handler
   const navigate = useNavigate();
 
+  const [darkTheme, setDarkTheme] = useState(false);
+
+  useEffect(() => {
+    document.body.className = darkTheme ? 'dark-theme' : 'light-theme';
+  }, [darkTheme]);
+
   return (
     <>
-    {/*
+      {/*
         Use the `ErrorBoundary` component from `react-error-boundary` to
         catch any errors that occur within the `Routes` component.
         If an error occurs, the `ErrorFallback` component will be displayed.
@@ -32,6 +38,15 @@ function App() {
           navigate('/');
         }}
       >
+        <div className="toggle-container">
+          <label htmlFor="theme-toggle">Toggle Theme</label>
+          <input
+            id="theme-toggle"
+            type="checkbox"
+            checked={darkTheme}
+            onChange={() => setDarkTheme(!darkTheme)}
+          />
+        </div>
         <Navbar />
         <Routes>
           {/* Define the routes for the application */}

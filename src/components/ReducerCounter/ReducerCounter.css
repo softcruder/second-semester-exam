@@ -1,84 +1,226 @@
+/* ReducerCounter component */
+
 .container {
-  margin: auto;
-  width: 50%;
-  background-color: rgba(221, 221, 221, 0.555);
-  border: 3px solid rgba(230, 230, 230, 0.95);
-  border-radius: 5px;
-  padding: 10px 20px;
   display: flex;
-  flex-wrap: wrap;
-  align-content: center;
   justify-content: center;
-  margin-top: 120px;
-  margin-bottom: 120px;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f1f1f1;
 }
 
 .main-card {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 300px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-  padding: 10px;
+  padding: 20px;
+}
+
+.main-btn-d,
+.main-btn-i {
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .main-btn-d {
-  background-color: black;
-  color: rgb(200, 150, 17);
-  font-size: 18px;
-  font-weight: 600;
-  border: 1px;
-  border-radius: 25px 0 0 25px;
-}
-
-.counter {
-  background-color: #fff;
-  color: rgb(200, 150, 17);
-  border: 2px solid black;
-  font-size: 18px;
-  font-weight: 600;
-  font-family: 'Poppins';
-  padding: 10px;
+  background-color: #f44336;
+  color: #fff;
 }
 
 .main-btn-i {
-  background-color: black;
-  color: rgb(200, 150, 17);
-  font-size: 18px;
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.main-btn-d:hover,
+.main-btn-i:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  transform: scale(1.1);
+}
+
+.counter {
+  font-size: 48px;
   font-weight: 600;
-  border: 1px;
-  border-radius: 0 25px 25px 0;
+  margin: 20px 0;
 }
 
 .extra-card {
-  display: block;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  padding: 20px;
-  margin: auto;
+  justify-content: center;
 }
 
-input {
-  height: 35px;
-  border: 2px solid black;
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+.extra-btn-re,
+.extra-btn-se {
+  width: 80%;
+  height: 40px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px 0;
+  transition: all 0.3s ease;
 }
 
 .extra-btn-re {
-  background-color: black;
-  color: rgb(200, 150, 17);
-  font-size: 18px;
-  font-weight: 600;
-  border: 1px;
-  border-radius: 15px 0 0 15px;
+  background-color: #f44336;
+  color: #fff;
 }
 
 .extra-btn-se {
-  background-color: black;
-  color: rgb(200, 150, 17);
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.extra-btn-re:hover,
+.extra-btn-se:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  transform: scale(1.1);
+}
+
+input[type='number'] {
+  width: 80%;
+  height: 40px;
+  border: 1px solid #eee;
+  padding: 5px;
+  border-radius: 5px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
   font-size: 18px;
-  font-weight: 600;
-  border: 1px;
-  border-radius: 0 15px 15px 0;
+  margin-right: 5px;
+}
+
+input:focus {
+  outline: none;
+  border-color: #000;
+}
+
+input[type='text'] {
+  width: 60%;
+  height: 30px;
+  border: 1px solid rgb(221, 150, 17);
+  border-radius: 5px;
+  padding: 0 10px;
+  font-size: 16px;
+  color: #555;
+}
+
+button[type='submit'] {
+  width: 20%;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(221, 150, 17);
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button[type='submit']:hover {
+  background-color: rgb(221, 130, 17);
+}
+
+.add-item-form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+button {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  color: #fff;
+  background: #000;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+button:hover {
+  background: #222;
+}
+button:active {
+  background: #555;
+}
+button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.counter {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  font-size: 18px;
+  text-align: center;
+  line-height: 40px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.main-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main-btn-i,
+.main-btn-d {
+  width: 80px;
+  height: 80px;
+  border: none;
+  border-radius: 5px;
+  font-size: 36px;
+  color: #fff;
+  background: #000;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.main-btn-i:hover,
+.main-btn-d:hover {
+  background: #222;
+}
+.main-btn-i:active,
+.main-btn-d:active {
+  background: #555;
+}
+.main-btn-i:disabled,
+.main-btn-d:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.main-btn-d {
+  margin-bottom: 10px;
+}
+.main-btn-i {
+  margin-top: 10px;
+}
+
+.extra-card {
+  display: flex;
+}
+.extra-btn-re,
+.extra-btn-se {
+  width: 80px;
+  height: 40px;
+  border: none;
 }

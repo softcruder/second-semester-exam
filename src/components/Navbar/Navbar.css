@@ -9,9 +9,10 @@ nav {
 nav ul {
   list-style: none;
   text-decoration: none;
+  display: flex;
 }
 ul li {
-  display: inline;
+  display: inline-block;
   color: rgb(221, 150, 17);
   margin: 20px;
   font-size: 20px;
@@ -35,9 +36,14 @@ nav ul li a:hover {
   font-weight: 600;
 }
 
-nav ul li a:active {
-  border: 1px solid rgb(221, 150, 17);
-  padding: 5px 10px;
+.nav-link {
+  display: none;
+}
+
+@media (min-width: 800px) {
+  .nav-link {
+    display: block;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -54,7 +60,7 @@ nav ul li a:active {
     text-decoration: none;
   }
   ul li {
-    display: inline;
+    display: inline-block;
     color: rgb(221, 150, 17);
     margin: 6px;
     font-size: 13px;

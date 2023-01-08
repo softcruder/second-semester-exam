@@ -17,3 +17,13 @@ button {
   background-color: rgb(221, 150, 17);
   cursor: pointer;
 }
+
+.dark-theme {
+  background-color: #333;
+  color: #fff;
+}
+
+.light-theme {
+  background-color: #fff;
+  color: #333;
+}
